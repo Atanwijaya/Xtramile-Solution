@@ -1,0 +1,31 @@
+[
+  {
+    "outputFileName": "wwwroot/js/lib/weatherinformation.dependencies.bundle.js",
+    "inputFiles": [
+      "wwwroot/js/lib/jquery.js",
+      "wwwroot/js/lib/popper.js",
+      "wwwroot/js/lib/bootstrap.js",
+      "wwwroot/js/lib/jquery.validate.min.js",
+      "wwwroot/js/lib/moment.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "outputMode": "singleLine",
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/css/lib/weatherinformation.dependencies.bundle.css",
+    "inputFiles": [
+      "wwwroot/css/lib/bootstrap.css",
+      "wwwroot/css/lib/font-awesome.css"
+    ],
+    "minify": {
+      "enabled": true,
+      "outputMode": "singleLine",
+      "renameLocals": true
+    },
+    "sourceMap": false
+  }
+]

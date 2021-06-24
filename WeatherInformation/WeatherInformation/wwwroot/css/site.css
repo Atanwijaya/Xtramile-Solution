@@ -1,0 +1,8 @@
+﻿.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    max-width: 400px;
+}
+    .body-content .content-container{
+        border-radius: 4px;
+    }

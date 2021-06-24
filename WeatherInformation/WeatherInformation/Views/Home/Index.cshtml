@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@section Styles{
+    <environment exclude="Development">
+
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    </environment>
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    </environment>
+}
+<div class="p-3 bg-light content-container">
+    <div class="form-group">
+        <label class="text-secondary">Countries</label>
+        <select class="form-control" id="country"></select>
+    </div>
+    <div class="form-group">
+        <label class="text-secondary">Cities</label>
+        <select class="form-control" id="city"></select>
+    </div>
+</div>
+@section Scripts{
+    <environment exclude="Development">
+        <script type="text/javascript" asp-append-version="true" src="~/js/site.js"></script>
+    </environment>
+    <environment include="Development">
+        <script type="text/javascript" asp-append-version="true" src="~/js/site.js"></script>
+    </environment>
+}
