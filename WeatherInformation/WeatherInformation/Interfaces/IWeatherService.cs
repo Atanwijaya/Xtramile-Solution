@@ -8,6 +8,6 @@ namespace WeatherInformation.Interfaces
 {
     public interface IWeatherService
     {
-        Task<List<CityVM>> GetWeatherInfoByCityNameAsync(string cityName);
+        Task<WeatherConditionVM> GetWeatherConditionByCityNameAsync(string cityName);
     }
 }

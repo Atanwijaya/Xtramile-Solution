@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using WeatherInformation.Interfaces;
+using WeatherInformation.Models;
 
 namespace WeatherInformation
 {
@@ -25,12 +26,15 @@ namespace WeatherInformation
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddOptions();
+            services.Configure<ApplicationSettings>(Configuration.GetSection("ApplicationSettings"));
             services.AddSingleton<ICityRepository, CityRepository>();
             services.AddSingleton<ICityService, CityService>();
             services.AddSingleton<ICountryRepository, CountryRepository>();
             services.AddSingleton<ICountryService, CountryService>();
+            services.AddSingleton<IWeatherService, WeatherService>();
             //https://docs.microsoft.com/en-us/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests
-            services.AddHttpClient<IWeatherService, WeatherService>();
+            services.AddHttpClient("WeatherHTTPClient");
 
         }
 

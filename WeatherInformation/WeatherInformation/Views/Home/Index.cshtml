@@ -10,16 +10,89 @@
         <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     </environment>
 }
-<div class="p-3 bg-light content-container">
-    <div class="form-group">
-        <label class="text-secondary">Countries</label>
-        <select class="form-control" id="country"></select>
-    </div>
-    <div class="form-group">
-        <label class="text-secondary">Cities</label>
-        <select class="form-control" id="city"></select>
+<div class="align-items-center d-flex h-100 container body-content">
+    <div class="p-3 bg-light content-container flex-grow-1">
+        <div class="form-group">
+            <label class="text-secondary">Countries</label>
+            <select class="form-control" id="country"></select>
+        </div>
+        <div class="form-group">
+            <label class="text-secondary">Cities</label>
+            <select class="form-control" id="city"></select>
+        </div>
+        <div>
+            <div class="mb-2">
+                <b>Country : </b>
+                <span id="countryTxt"></span>
+            </div>
+            <div class="mb-2">
+                <b>City : </b>
+                <span id="cityTxt"></span>
+            </div>
+            <div class="mb-2">
+                <b>Coordinate</b>
+                <div class="ml-3">
+                    <div>
+                        Longitude : <span id="longitude"></span>
+                    </div>
+                    <div>Latitude : <span id="latitude"></span></div>
+                </div>
+            </div>
+            <div class="mb-2">
+                <b>
+                    Time :
+                </b>
+                <span id="time"></span>
+            </div>
+            <div class="mb-2">
+                <b>
+                    Wind
+                </b>
+                <div class="ml-3">
+                    <div>
+                        Speed : <span id="speed"></span> <span class="ml-1">M / S</span>
+                    </div>
+                    <div>
+                        Direction : <span id="direction"></span> <span class="ml-1">Degrees</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-2">
+                <b>
+                    Visibility :
+                </b>
+                <span id="visibility"></span> <span class="ml-1">Meter</span>
+
+            </div>
+            <div class="mb-2">
+                <b>
+                    Sky Conditions :
+                </b>
+                <div class="ml-3" id="skyconditions">
+                </div>
+            </div>
+            <div class="mb-2">
+                <b>
+                    Temperature :
+                </b>
+                <span id="temp"></span> <span class="ml-1">Celsius</span>
+            </div>
+            <div class="mb-2">
+                <b>
+                    Humidity :
+                </b>
+                <span id="humidity"></span> <span class="ml-1">%</span>
+            </div>
+            <div class="mb-2">
+                <b>
+                    Pressure :
+                </b>
+                <span id="pressure"></span> <span class="ml-1">hPa</span>
+            </div>
+        </div>
     </div>
 </div>
+
 @section Scripts{
     <environment exclude="Development">
         <script type="text/javascript" asp-append-version="true" src="~/js/site.js"></script>

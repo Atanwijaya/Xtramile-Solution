@@ -29,6 +29,7 @@
         $.each(countries, function (ix, countryObj) {
             $('#country').append('<option value="' + countryObj.id + '">' + countryObj.name + '</option>');
         });
+        $('#country').val("");
         $('#country').on('change', function () {
             var countryID = $(this).val();
             $('#city').empty();
@@ -39,16 +40,31 @@
                 $.each(cities, function (ix, cityObj) {
                     $('#city').append('<option value="' + cityObj.id + '">' + cityObj.name + '</option>');
                 });
+                $('#city').val("");
             });
         });
 
         $('#city').on('change', function () {
             var cityName = $(this).find("option:selected").html();
             ajaxHelper({
-                url: "/api/weather/getWeatherInfoByCityName/" + cityName,
+                url: "/api/weather/getWeatherConditionByCityName/" + cityName,
                 method: 'GET'
             }).done(function (weatherInfo) {
-                console.log(weatherInfo);
+                $('#cityTxt').html($('#city option:selected').html());
+                $('#countryTxt').html($('#country option:selected').html());
+                $('#longitude').html(weatherInfo.coordinate.longitude);
+                $('#latitude').html(weatherInfo.coordinate.latitude);
+                $('#time').html(weatherInfo.time);
+                $('#speed').html(weatherInfo.wind.speed);
+                $('#direction').html(weatherInfo.wind.direction);
+                $('#visibility').html(weatherInfo.visibility);
+                $('#temp').html(weatherInfo.temperature);
+                $('#humidity').html(weatherInfo.humidity);
+                $('#pressure').html(weatherInfo.pressure);
+                $('#skyconditions').empty();
+                $.each(weatherInfo.skyCondition, function (ix, conStr) {
+                    $('#skyconditions').append('<div>' + conStr + '</div>');
+                });
             });
         });
     });
